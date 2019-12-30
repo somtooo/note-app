@@ -2,9 +2,10 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 
-const addNote = function (title, body){
+const addNote = (title, body) =>{
     let notes = loadNotes();
     const duplicateNotes = notes.find((note) => note.title === title);
+    debugger
     if (!duplicateNotes){
         notes.push({
             title:title,
@@ -42,6 +43,7 @@ const listNotes = () =>{
 
 
 };
+
 
 const saveNotes = function (notes) {
     const dataJSON = JSON.stringify(notes);
